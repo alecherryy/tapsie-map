@@ -1,4 +1,13 @@
+// this is where you set your base font size
+$modularscale: (
+  base: 16px,
+  ratio: 1.33
+);
+
 .App {
+  font-family: "Verdana", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
   text-align: center;
 }
 
@@ -14,7 +23,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: ms(0);
   color: white;
 }
 

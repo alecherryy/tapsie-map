@@ -67,6 +67,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "modularscale-sass": "^3.0.8",
     "node-sass": "^4.9.4",
     "sass-loader": "^7.1.0"
   },
