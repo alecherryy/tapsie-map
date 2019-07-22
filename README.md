@@ -3,7 +3,7 @@ This is my personal repo to get started with React. It's a very simple set up, w
 Last time I launched this, I ran into a Node error:
 
 ```
-
+Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (72)
 ```
 
 If that happens, running
