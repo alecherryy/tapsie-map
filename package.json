@@ -6,7 +6,7 @@
     "node-sass": "^4.12.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5"
+    "react-scripts": "^2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,7 +24,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "modularscale-sass": "^3.0.8",
-    "sass-loader": "^7.1.0"
+    "file-loader": "^4.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-version": "^1.3.1",
+    "url-loader": "^2.1.0"
   }
 }

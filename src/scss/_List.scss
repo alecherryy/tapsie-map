@@ -1,0 +1,45 @@
+.brewery-list {
+  background-color: $white;
+  border-right: solid 5px $yellow-light;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-y: -moz-scrollbars-none;
+  overflow-y: -ms-scrollbars-none;
+  max-width: 400px;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.brewery-list-quote {
+  margin: 0;
+  text: {
+    transform: uppercase;
+  }
+  width: 400px;
+  
+  p {
+    font: {
+      family: $header-font-family;
+      size: $font-size-xl;
+    }
+    line-height: 1;
+    letter-spacing: -1px;
+    max-width: 80%;
+    padding: 5rem 1.5rem 5rem 5.5rem;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '\201C';
+      color: $yellow-dark;
+      font-size: 140px;
+      left: 30px;
+      margin: 0;
+      position: absolute;
+      top: 60px;
+      z-index: -1;
+    }
+  }
+}

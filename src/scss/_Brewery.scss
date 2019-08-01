@@ -1,0 +1,87 @@
+.brewery-component {
+  background-color: #fff;
+  border-bottom: solid 1px #ececec;
+  padding: 1rem 1.5rem 4rem;
+}
+
+.brewery-title {
+  font-size: $font-size-lg;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.brewery-address {
+  color: $gray;
+  font: {
+    family: $base-font-family;
+    size: $font-size-sm;
+    style: normal;
+  }
+  margin: 2rem 0 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    background: {
+      image: url('images/icon-location.svg');
+      size: 16px 22px;
+      repeat: no-repeat;
+    }
+    display: block;
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    width: 16px;
+  }
+}
+
+.brewery-hours {
+  color: $gray;
+  font: {
+    size: $font-size-sm;
+  }
+  padding-left: 1.5rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    background: {
+      image: url('images/icon-clock.svg');
+      size: 16px 16px;
+      repeat: no-repeat;
+    }
+    display: block;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 2px;
+    width: 16px;
+  }
+}
+
+.brewery-link {
+  color: $gray;
+  font: {
+    size: $font-size-sm;
+  }
+  padding-left: 1.5rem;
+  text-decoration: underline;
+  position: relative;
+
+  &::before {
+    content: '';
+    background: {
+      image: url('images/icon-web.svg');
+      size: 16px 16px;
+      repeat: no-repeat;
+    }
+    display: block;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 2px;
+    width: 16px;
+  }
+}

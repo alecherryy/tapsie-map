@@ -1,41 +1,157 @@
 // this is where you set your base font size
-$modularscale: (
-  base: 16px,
-  ratio: 1.33
-);
-
-.App {
-  font-family: "Verdana", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen",
-  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif;
-  text-align: center;
+html {
+  box-sizing: border-box;
+  font-size: 100% * ($base-font-size / 16px);
+  line-height: $base-line-height;
+  min-height: 100%;
+  text-size-adjust: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
+body {
+  color: $black;
+  font-family: $base-font-family;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  word-wrap: break-word;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: ms(0);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  &.no-scroll {
+    overflow-y: hidden;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+%hN {
+  @extend %header-font-family !optional;
+  color: $black;
+  hyphens: none;
+  line-height: 1.3;
+  margin: 0 0 rem($vertical-spacing);
+  text-rendering: optimizeLegibility;
+
+  @media print {
+    & {
+      orphans: 3;
+      page-break-after: avoid;
+      widows: 3;
+
+      &::after {
+        display: inline-block;
+      }
+    }
   }
+}
+
+h1,
+%h1 {
+  @extend %hN;
+  font-size: $font-size-h2;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+
+  @include bp-medium {
+    font-size: $font-size-h1;
+  }
+
+  &::before,
+  &::after {
+    display: none;
+  }
+}
+
+h2,
+%h2 {
+  @extend %hN;
+  font-size: $font-size-h3;
+  font-weight: 700;
+
+  @include bp-medium {
+    font-size: $font-size-h2;
+  }
+}
+
+h3,
+%h3 {
+  @extend %hN;
+  font-size: $font-size-lg;
+  font-weight: 700;
+
+  @include bp-medium {
+    font-size: $font-size-h3;
+  }
+}
+
+h4,
+%h4 {
+  @extend %hN;
+  font-size: $font-size-h5;
+  font-weight: 400;
+
+  @include bp-medium {
+    font-size: $font-size-h4;
+  }
+}
+
+h5,
+%h5 {
+  @extend %hN;
+  font-size: $font-size-h6;
+  font-weight: 700;
+
+  @include bp-medium {
+    font-size: $font-size-h5;
+  }
+}
+
+h6,
+%h6 {
+  @extend %hN;
+  font-size: $font-size-h6;
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  // Remove top margin for adjacent subheadings.
+  font-family: $header-font-family;
+}
+
+p {
+  font: {
+    family: $base-font-family;
+    size: $base-font-size;
+  }
+  margin: 0 0 1rem;
+
+  @media print {
+    & {
+      orphans: 3;
+      widows: 3;
+    }
+  }
+}
+
+hr {
+  border: solid 1px #fff;
+}
+
+section {
+  padding: 90px 75px;
+
+  @include bp-medium {
+    padding: 90px 135px;
+  }
+}
+a {
+  color: $gray;
+  text-decoration: none;
+  
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+main {}
+
+img {
+  max-width: 100%;
 }

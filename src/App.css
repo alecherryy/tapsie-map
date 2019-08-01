@@ -1,32 +1,297 @@
-.App {
-  text-align: center;
+@charset "UTF-8";
+@font-face {
+  font-family: "Avenir";
+  src: url("/src/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("/src/fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/src/fonts/AvenirNextLTPro-Light.woff") format("woff"), url("/src/fonts/AvenirNextLTPro-Light.woff2") format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/src/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("/src/fonts/AvenirNextLTPro-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  line-height: 1.5;
+  min-height: 100%;
+  text-size-adjust: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+  color: #272b2e;
+  font-family: "Avenir", serif;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  word-wrap: break-word;
+}
+body.no-scroll {
+  overflow-y: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h6, h5, h4, h3, h2, h1 {
+  color: #272b2e;
+  hyphens: none;
+  line-height: 1.3;
+  margin: 0 0 rem(16px);
+  text-rendering: optimizeLegibility;
+}
+@media print {
+  h6, h5, h4, h3, h2, h1 {
+    orphans: 3;
+    page-break-after: avoid;
+    widows: 3;
+  }
+  h6::after, h5::after, h4::after, h3::after, h2::after, h1::after {
+    display: inline-block;
+  }
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+  }
+}
+h1::before, h1::after {
+  display: none;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 48px;
+  }
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 36px;
+  }
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  h4 {
+    font-size: font-size-lg;
+  }
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h5 {
+    font-size: 16px;
+  }
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Heebo", sans-serif;
+}
+
+p {
+  font-family: "Avenir", serif;
+  font-size: 16px;
+  margin: 0 0 1rem;
+}
+@media print {
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+}
+
+hr {
+  border: solid 1px #fff;
+}
+
+section {
+  padding: 90px 75px;
+}
+@media (min-width: 768px) {
+  section {
+    padding: 90px 135px;
+  }
+}
+
+a {
+  color: #696969;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.breweries-amenities {
+  display: none;
+  border-top: solid 1px #ececec;
+  margin: 2rem 0 0;
+}
+
+.brewery-amenities-title {
+  color: #696969;
+  font-size: 14px;
+  letter-spacing: 0;
+  margin: 2rem 0 0.5rem;
+}
+
+.breweries-amenities-list {
+  color: #696969;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  font-family: "Avenir", serif;
+  font-size: 14px;
+  height: 116px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.breweries-amenities-list li {
+  padding-left: 0;
+  margin: 0.25rem 0;
 }
 
-.App-link {
-  color: #61dafb;
+.brewery-component {
+  background-color: #fff;
+  border-bottom: solid 1px #ececec;
+  padding: 1rem 1.5rem 4rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.brewery-title {
+  font-size: 20px;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
+
+.brewery-address {
+  color: #696969;
+  font-family: "Avenir", serif;
+  font-size: 14px;
+  font-style: normal;
+  margin: 2rem 0 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.brewery-address::before {
+  content: "";
+  background-image: url("images/icon-location.svg");
+  background-size: 16px 22px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 22px;
+  left: 0;
+  position: absolute;
+  top: -2px;
+  width: 16px;
+}
+
+.brewery-hours {
+  color: #696969;
+  font-size: 14px;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.brewery-hours::before {
+  content: "";
+  background-image: url("images/icon-clock.svg");
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 2px;
+  width: 16px;
+}
+
+.brewery-link {
+  color: #696969;
+  font-size: 14px;
+  padding-left: 1.5rem;
+  text-decoration: underline;
+  position: relative;
+}
+.brewery-link::before {
+  content: "";
+  background-image: url("images/icon-web.svg");
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 2px;
+  width: 16px;
+}
+
+.brewery-list {
+  background-color: #ebebeb;
+  border-right: solid 5px #FBD468;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-y: -moz-scrollbars-none;
+  overflow-y: -ms-scrollbars-none;
+  max-width: 400px;
+}
+.brewery-list::-webkit-scrollbar {
+  width: 0;
+}
+
+.brewery-list-quote {
+  margin: 0;
+  text-transform: uppercase;
+  width: 400px;
+}
+.brewery-list-quote p {
+  font-family: "Heebo", sans-serif;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: -1px;
+  max-width: 80%;
+  padding: 5rem 1.5rem 5rem 5.5rem;
+  position: relative;
+  z-index: 1;
+}
+.brewery-list-quote p::before {
+  content: "“";
+  color: #EA9629;
+  font-size: 140px;
+  left: 30px;
+  margin: 0;
+  position: absolute;
+  top: 60px;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=App.css.map */
