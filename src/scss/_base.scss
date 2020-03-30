@@ -18,6 +18,10 @@ body {
   &.no-scroll {
     overflow-y: hidden;
   }
+
+  > * {
+    box-sizing: border-box;
+  }
 }
 
 %hN {

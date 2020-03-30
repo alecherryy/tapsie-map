@@ -1,7 +1,9 @@
-.brewery-list {
+.list {
   background-color: $white;
   border-right: solid 5px $yellow-light;
+  display: inline-block;
   height: 100vh;
+  float: left;
   overflow-y: scroll;
   overflow-y: -moz-scrollbars-none;
   overflow-y: -ms-scrollbars-none;
@@ -12,7 +14,7 @@
   }
 }
 
-.brewery-list-quote {
+.list__quote {
   margin: 0;
   text: {
     transform: uppercase;

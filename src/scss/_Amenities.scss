@@ -1,17 +1,21 @@
-.breweries-amenities {
+.amenities {
   display: none;
   border-top: solid 1px #ececec;
   margin: 2rem 0 0;
+
+  &.show {
+    display: block;
+  }
 }
 
-.brewery-amenities-title {
+.amenities__title {
   color: $gray;
   font-size: $font-size-sm;
   letter-spacing: 0;
   margin: 2rem 0 .5rem;
 }
 
-.breweries-amenities-list {
+.amenities__list {
   color: $gray;
   display: flex;
   flex: {

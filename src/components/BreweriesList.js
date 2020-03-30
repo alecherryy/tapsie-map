@@ -1,7 +1,8 @@
 var BreweriesList = [
   { 
     'id': 'bwa_1',
-    'name':'Urban Family', 
+    'name':'Urban Family',
+    'coordinates': [47.660889, -122.390193],
     'address':'4441 26th Ave W, Seattle, WA 98199',
     'hours':'4PM-9PM',
     'description':'Contemporary, exposed-brick watering hole & brewery featuring house & craft beers in buzzy digs.',
@@ -40,6 +41,7 @@ var BreweriesList = [
   {
     'id': 'bwa_2',
     'name':'Fremont Brewing Company',
+    'coordinates': [47.649221, -122.344410],
     'address': '1050 N 34th St, Seattle, WA 98103',
     'hours':'11AM-9PM',
     'description':'This kid- & dog-friendly beer hall with bench tables serves up seasonal ales & free pretzels.',
@@ -74,6 +76,7 @@ var BreweriesList = [
   {
     'id': 'bwa_3',
     'name':'Holy Mountain Brewing Company',
+    'coordinates': [47.631010, -122.374528],
     'address': '1421 Elliott Ave W, Seattle, WA 98119',
     'hours':'3PM-10PM',
     'description':'',
@@ -100,6 +103,7 @@ var BreweriesList = [
   {
     'id': 'bwa_4',
     'name':'Old Stove Brewing',
+    'coordinates': [47.609861, -122.343004],
     'address': '1421 Elliott Ave W, Seattle, WA 98119',
     'hours':'10AM-11PM',
     'description':'Lively, kid-friendly taproom & brewery offering 16 taps of craft beers brewed on site.',
@@ -126,6 +130,7 @@ var BreweriesList = [
   {
     'id': 'bwa_5',
     'name':'Cloudburst Brewing',
+    'coordinates': [47.611816, -122.345267],
     'address': '2116 Western Ave, Seattle, WA 98121',
     'hours':'2PM-10PM',
     'description':'A pint-size taproom in a high-concept brewery dispensing craft suds to beer connoisseurs.',

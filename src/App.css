@@ -33,6 +33,9 @@ body {
 body.no-scroll {
   overflow-y: hidden;
 }
+body > * {
+  box-sizing: border-box;
+}
 
 h6, h5, h4, h3, h2, h1 {
   color: #272b2e;
@@ -152,20 +155,23 @@ img {
   max-width: 100%;
 }
 
-.breweries-amenities {
+.amenities {
   display: none;
   border-top: solid 1px #ececec;
   margin: 2rem 0 0;
 }
+.amenities.show {
+  display: block;
+}
 
-.brewery-amenities-title {
+.amenities__title {
   color: #696969;
   font-size: 14px;
   letter-spacing: 0;
   margin: 2rem 0 0.5rem;
 }
 
-.breweries-amenities-list {
+.amenities__list {
   color: #696969;
   display: flex;
   flex-direction: column;
@@ -177,24 +183,27 @@ img {
   padding: 0;
   list-style-type: none;
 }
-.breweries-amenities-list li {
+.amenities__list li {
   padding-left: 0;
   margin: 0.25rem 0;
 }
 
-.brewery-component {
+.brewery {
   background-color: #fff;
   border-bottom: solid 1px #ececec;
   padding: 1rem 1.5rem 4rem;
 }
+.brewery:hover {
+  background-color: #F7F4DE;
+}
 
-.brewery-title {
+.brewery__title {
   font-size: 20px;
   letter-spacing: 0;
   text-transform: uppercase;
 }
 
-.brewery-address {
+.brewery__address {
   color: #696969;
   font-family: "Avenir", serif;
   font-size: 14px;
@@ -203,7 +212,7 @@ img {
   padding-left: 1.5rem;
   position: relative;
 }
-.brewery-address::before {
+.brewery__address::before {
   content: "";
   background-image: url("images/icon-location.svg");
   background-size: 16px 22px;
@@ -216,13 +225,13 @@ img {
   width: 16px;
 }
 
-.brewery-hours {
+.brewery__hours {
   color: #696969;
   font-size: 14px;
   padding-left: 1.5rem;
   position: relative;
 }
-.brewery-hours::before {
+.brewery__hours::before {
   content: "";
   background-image: url("images/icon-clock.svg");
   background-size: 16px 16px;
@@ -235,14 +244,14 @@ img {
   width: 16px;
 }
 
-.brewery-link {
+.brewery__link {
   color: #696969;
   font-size: 14px;
   padding-left: 1.5rem;
   text-decoration: underline;
   position: relative;
 }
-.brewery-link::before {
+.brewery__link::before {
   content: "";
   background-image: url("images/icon-web.svg");
   background-size: 16px 16px;
@@ -255,25 +264,27 @@ img {
   width: 16px;
 }
 
-.brewery-list {
+.list {
   background-color: #ebebeb;
   border-right: solid 5px #FBD468;
+  display: inline-block;
   height: 100vh;
+  float: left;
   overflow-y: scroll;
   overflow-y: -moz-scrollbars-none;
   overflow-y: -ms-scrollbars-none;
   max-width: 400px;
 }
-.brewery-list::-webkit-scrollbar {
+.list::-webkit-scrollbar {
   width: 0;
 }
 
-.brewery-list-quote {
+.list__quote {
   margin: 0;
   text-transform: uppercase;
   width: 400px;
 }
-.brewery-list-quote p {
+.list__quote p {
   font-family: "Heebo", sans-serif;
   font-size: 36px;
   line-height: 1;
@@ -283,7 +294,7 @@ img {
   position: relative;
   z-index: 1;
 }
-.brewery-list-quote p::before {
+.list__quote p::before {
   content: "“";
   color: #EA9629;
   font-size: 140px;
@@ -292,6 +303,202 @@ img {
   position: absolute;
   top: 60px;
   z-index: -1;
+}
+
+.leaflet__map {
+  height: 100vh;
+}
+
+.welcome {
+  align-items: center;
+  background-color: #33C4B6;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  opacity: 1;
+  width: 100%;
+}
+.welcome.hidden {
+  animation: fade-out 2s ease-in 1.5s 1 forwards;
+  overflow: hidden;
+}
+
+@keyframes fade-out {
+  50% {
+    height: 0;
+  }
+  75% {
+    height: 0;
+  }
+  100% {
+    height: 0;
+    display: none;
+  }
+}
+.welcome__inner {
+  opacity: 1;
+  text-align: center;
+  transform: none;
+  transition: all 1.5s ease-in-out;
+  transition-delay: 0.5s;
+}
+.hidden .welcome__inner {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.welcome__site-name {
+  display: block;
+  color: transparent;
+  font: 0/0 a;
+  height: 92px;
+  position: relative;
+  text-shadow: none;
+  width: 300px;
+}
+.welcome__site-name::before {
+  content: "";
+  background-image: url("images/logo.svg");
+  display: block;
+  color: transparent;
+  font: 0/0 a;
+  height: 92px;
+  text-shadow: none;
+  width: 300px;
+  background-position: center;
+  background-size: 300px 92;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 768px) {
+  .welcome__site-name {
+    height: 181px;
+    margin: 0 0 1rem;
+    width: 600px;
+  }
+  .welcome__site-name::before {
+    content: "";
+    background-image: url("images/logo.svg");
+    height: 181px;
+    width: 600px;
+    background-size: 600px 181px;
+    top: 0;
+    left: 0;
+  }
+}
+
+.welcome__text {
+  color: #4A8993;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 2rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .welcome__text {
+    font-size: 36px;
+  }
+}
+
+.welcome__btn {
+  box-shadow: none;
+  border: solid 3px #ebebeb;
+  border-radius: 0;
+  color: #ebebeb;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 700;
+  overflow: hidden;
+  padding: 15px 0;
+  position: relative;
+  text-transform: uppercase;
+  width: 135px;
+  z-index: 1;
+}
+.welcome__btn::before, .welcome__btn::after {
+  content: "";
+  display: block;
+  background-color: #FAB409;
+  bottom: calc((-135px - 135px) / 2);
+  height: 135px;
+  left: calc((-405px + 135px) / 2);
+  opacity: 0;
+  position: absolute;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  width: 405px;
+  z-index: -1;
+}
+.welcome__btn:focus {
+  outline: none;
+}
+.welcome__btn:focus::before, .welcome__btn:hover::before {
+  animation: waves-hover 2s ease-in-out 0s 1 forwards;
+}
+.welcome__btn:focus::after, .welcome__btn:hover::after {
+  animation: waves-after-hover 2s ease-in-out 0s 1 forwards;
+}
+
+@keyframes waves-hover {
+  0% {
+    transform: rotate(9deg);
+    bottom: calc((-135px - 105px) / 2);
+  }
+  20% {
+    opacity: 0.6;
+  }
+  25% {
+    bottom: calc((-135px - 105px) / 2);
+    transform: rotate(8deg);
+    opacity: 0.6;
+  }
+  50% {
+    bottom: calc((-135px - 75px) / 2);
+    transform: rotate(7deg);
+    opacity: 0.6;
+  }
+  75% {
+    bottom: calc((-135px - 45px) / 2);
+    transform: rotate(6deg);
+    opacity: 0.6;
+  }
+  100% {
+    bottom: calc((-135px - 15px) / 2);
+    transform: rotate(5deg);
+    opacity: 0.6;
+  }
+}
+@keyframes waves-after-hover {
+  0% {
+    transform: rotate(-9deg);
+    bottom: calc((-135px - 105px) / 2);
+  }
+  20% {
+    opacity: 0.4;
+  }
+  25% {
+    bottom: calc((-135px - 105px) / 2);
+    transform: rotate(8deg);
+    opacity: 0.4;
+  }
+  50% {
+    bottom: calc((-135px - 75px) / 2);
+    transform: rotate(-7deg);
+    opacity: 0.4;
+  }
+  75% {
+    bottom: calc((-135px - 45px) / 2);
+    transform: rotate(6deg);
+    opacity: 0.4;
+  }
+  100% {
+    bottom: calc((-135px - 5px) / 2);
+    transform: rotate(-5deg);
+    opacity: 0.4;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

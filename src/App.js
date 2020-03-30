@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import List from './components/List';
-import logo from './logo.svg';
+import { render } from 'react-dom';
+import Welcome from './components/Welcome.js'
+import Explore from './components/Explore.js'
 import './index.css'; // remove this when creating a new project
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <List />
+      <div className="container">
+        <Welcome />
+        <Explore />
+      </div>
     );
   }
 }
